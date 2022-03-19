@@ -1,5 +1,5 @@
 {% set name = "accelerate" %}
-{% set version = "0.6.0" %}
+{% set version = "0.6.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/accelerate-{{ version }}.tar.gz
-  sha256: dc40a2c71e83363c05ff96418824ea896933430f08b79c2112599ea7f9b3bc86
+  sha256: aa1156c4402c7133d4dfc900daa1015f702c6ed930ecf94a96f561f56be456d2
 
 build:
   number: 0
