@@ -40,6 +40,7 @@ test:
     - accelerate-config --help
     - accelerate-launch --help
   requires:
+    - datasets
     - pip
 
 about:
