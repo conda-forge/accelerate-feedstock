@@ -42,6 +42,7 @@ test:
   requires:
     - datasets
     - pip
+    - transformers
 
 about:
   home: https://github.com/huggingface/accelerate
