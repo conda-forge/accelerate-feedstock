@@ -1,5 +1,5 @@
 {% set name = "accelerate" %}
-{% set version = "0.8.0" %}
+{% set version = "0.9.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/accelerate-{{ version }}.tar.gz
-  sha256: e8f43a55bcbe0ff6fb3d7f03335b026fda11c7b35f3666f86c148ea528bdb2a0
+  sha256: 96e753c54f64593b4d3fcc5d3b5204eb94e94bc3482882dfa152229230723d78
 
 build:
   number: 0
@@ -40,7 +40,10 @@ test:
     - accelerate-config --help
     - accelerate-launch --help
   requires:
+    - datasets
     - pip
+    - sentencepiece
+    - transformers
 
 about:
   home: https://github.com/huggingface/accelerate
