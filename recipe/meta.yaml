@@ -42,6 +42,7 @@ test:
   requires:
     - datasets
     - pip
+    - sentencepiece
     - transformers
 
 about:
