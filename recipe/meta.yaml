@@ -45,6 +45,7 @@ test:
     - pip
     - sentencepiece
     - transformers
+    - tokenizers !=0.11.3,<0.13,>=0.11.1
 
 about:
   home: https://github.com/huggingface/accelerate
