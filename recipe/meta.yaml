@@ -42,10 +42,13 @@ test:
     - accelerate-launch --help
   requires:
     - datasets
+    - deepspeed <0.7.0
+    - evaluate
     - pip
-    - sentencepiece
+    - scipy
+    - scikit-learn
     - transformers
-    - tokenizers !=0.11.3,<0.13,>=0.11.1
+    - tqdm
 
 about:
   home: https://github.com/huggingface/accelerate
