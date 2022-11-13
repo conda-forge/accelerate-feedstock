@@ -42,7 +42,6 @@ test:
     - accelerate-launch --help
   requires:
     - datasets
-    - deepspeed <0.7.0
     - evaluate
     - pip
     - scipy
