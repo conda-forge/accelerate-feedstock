@@ -22,14 +22,14 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.7
   run:
     - dill >=0.3.6
     - numpy >=1.17
     - packaging >=20.0
     - psutil
     - pytorch >=1.4.0
-    - python >=3.6
+    - python >=3.7
     - pyyaml
 
 test:
