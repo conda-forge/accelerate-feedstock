@@ -24,7 +24,6 @@ requirements:
     - pip
     - python >=3.7
   run:
-    - dill >=0.3.6
     - numpy >=1.17
     - packaging >=20.0
     - psutil
