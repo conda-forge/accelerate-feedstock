@@ -1,11 +1,11 @@
-About accelerate
-================
+About accelerate-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/accelerate-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/huggingface/accelerate
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/accelerate-feedstock/blob/main/LICENSE.txt)
 
 Summary: Training loop of PyTorch without boilerplate code
 
