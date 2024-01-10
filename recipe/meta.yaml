@@ -16,6 +16,7 @@ build:
   entry_points:
     - accelerate=accelerate.commands.accelerate_cli:main
     - accelerate-config=accelerate.commands.config:main
+    - accelerate-estimate-memory=accelerate.commands.estimate:main
     - accelerate-launch=accelerate.commands.launch:main
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -24,13 +25,15 @@ requirements:
     - pip
     - python >=3.8.0
   run:
+    - python >=3.8.0
     - numpy >=1.17
     - packaging >=20.0
     - psutil
-    - pytorch >=1.10.0
-    - python >=3.8.0
     - pyyaml
-
+    - pytorch >=1.10.0
+    - huggingface_hub
+    - safetensors >=0.3.1
+    
 test:
   imports:
     - accelerate
@@ -40,6 +43,7 @@ test:
     - accelerate --help
     - accelerate-config --help
     - accelerate-launch --help
+    - accelerate-estimate-memory --help
   requires:
     - datasets
     - evaluate
