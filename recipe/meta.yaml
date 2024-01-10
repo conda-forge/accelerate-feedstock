@@ -1,5 +1,5 @@
 {% set name = "accelerate" %}
-{% set version = "0.25.0" %}
+{% set version = "0.26.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/accelerate-{{ version }}.tar.gz
-  sha256: ecf55b0ab278a1dac8539dde0d276977aff04683f07ede73eaf02478538576a1
+  sha256: 3b98a86b6c2e362d6c98a581346fd57f444b949866dd50f313e552b613784e9e
 
 build:
   number: 0
@@ -16,6 +16,7 @@ build:
   entry_points:
     - accelerate=accelerate.commands.accelerate_cli:main
     - accelerate-config=accelerate.commands.config:main
+    - accelerate-estimate-memory=accelerate.commands.estimate:main
     - accelerate-launch=accelerate.commands.launch:main
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -24,13 +25,15 @@ requirements:
     - pip
     - python >=3.8.0
   run:
+    - python >=3.8.0
     - numpy >=1.17
     - packaging >=20.0
     - psutil
-    - pytorch >=1.10.0
-    - python >=3.8.0
     - pyyaml
-
+    - pytorch >=1.10.0
+    - huggingface_hub
+    - safetensors >=0.3.1
+    
 test:
   imports:
     - accelerate
@@ -40,6 +43,7 @@ test:
     - accelerate --help
     - accelerate-config --help
     - accelerate-launch --help
+    - accelerate-estimate-memory --help
   requires:
     - datasets
     - evaluate
