@@ -37,7 +37,6 @@ requirements:
 test:
   imports:
     - accelerate
-    - accelerate.commands
   commands:
     - pip check
     - accelerate --help
