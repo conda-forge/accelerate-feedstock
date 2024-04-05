@@ -47,6 +47,7 @@ test:
     - datasets
     - evaluate
     - pip
+    - pytest
     - scipy
     - scikit-learn
     - transformers
