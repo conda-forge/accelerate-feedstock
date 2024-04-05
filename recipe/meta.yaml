@@ -1,5 +1,5 @@
 {% set name = "accelerate" %}
-{% set version = "0.28.0" %}
+{% set version = "0.29.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/accelerate-{{ version }}.tar.gz
-  sha256: 32019a49f4b3a85cc179ac4e38e9e2971f1a997dee026be0512816499464c4d5
+  sha256: 0c1f86f71478965de4ed514e9045eaa624cd7dc362515f7082ef57dc52fa735a
 
 build:
   number: 0
@@ -37,7 +37,6 @@ requirements:
 test:
   imports:
     - accelerate
-    - accelerate.commands
   commands:
     - pip check
     - accelerate --help
@@ -48,6 +47,7 @@ test:
     - datasets
     - evaluate
     - pip
+    - pytest
     - scipy
     - scikit-learn
     - transformers
