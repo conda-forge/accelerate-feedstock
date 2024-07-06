@@ -1,5 +1,5 @@
 {% set name = "accelerate" %}
-{% set version = "0.31.0" %}
+{% set version = "0.32.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/accelerate-{{ version }}.tar.gz
-  sha256: b5199865b26106ccf9205acacbe8e4b3b428ad585e7c472d6a46f6fb75b6c176
+  sha256: ebd60cf05a43c6a23b68360d1861403bf74d8c8f9a2287b1947c1d194d686769
 
 build:
   number: 0
@@ -26,7 +26,7 @@ requirements:
     - python >=3.8.0
   run:
     - python >=3.8.0
-    - numpy >=1.17
+    - numpy >=1.17,<2.0.0
     - packaging >=20.0
     - psutil
     - pyyaml
