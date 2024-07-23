@@ -23,15 +23,15 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.8.0
+    - python >=3.8
   run:
-    - python >=3.8.0
+    - python >=3.8
     - numpy >=1.17,<2.0.0
     - packaging >=20.0
     - psutil
     - pyyaml
     - pytorch >=1.10.0
-    - huggingface_hub
+    - huggingface_hub >=0.21.0
     - safetensors >=0.3.1
 
 test:
