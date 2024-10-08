@@ -18,22 +18,23 @@ build:
     - accelerate-config=accelerate.commands.config:main
     - accelerate-estimate-memory=accelerate.commands.estimate:main
     - accelerate-launch=accelerate.commands.launch:main
+    - accelerate-merge-weights=accelerate.commands.merge:main
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python >=3.8.0
     - setuptools
   run:
-    - python >=3.8
-    - numpy >=1.17,<2.0.0
+    - python >=3.8.0
+    - numpy >=1.17,<3.0.0
     - packaging >=20.0
     - psutil
     - pyyaml
     - pytorch >=1.10.0
     - huggingface_hub >=0.21.0
-    - safetensors >=0.3.1
+    - safetensors >=0.4.3
 
 test:
   imports:
@@ -44,6 +45,7 @@ test:
     - accelerate-config --help
     - accelerate-launch --help
     - accelerate-estimate-memory --help
+    - accelerate-merge-weights --help
   requires:
     - datasets
     - evaluate
