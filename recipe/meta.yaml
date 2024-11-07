@@ -1,3 +1,4 @@
+{% set python_min = python_min|default("0.1a0") %}
 {% set name = "accelerate" %}
 {% set version = "1.1.1" %}
 
@@ -7,7 +8,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/accelerate-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/accelerate-{{ version }}.tar.gz
   sha256: 0d39dfac557052bc735eb2703a0e87742879e1e40b88af8a2f9a93233d4cd7db
 
 build:
@@ -24,10 +25,10 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.8.0
+    - python {{ python_min }}.*
     - setuptools
   run:
-    - python >=3.8.0
+    - python >={{ python_min }}
     - numpy >=1.17,<3.0.0
     - packaging >=20.0
     - psutil
@@ -55,6 +56,7 @@ test:
     - scikit-learn
     - transformers
     - tqdm
+    - python ={{ python_min }}
 
 about:
   home: https://github.com/huggingface/accelerate
