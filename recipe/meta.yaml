@@ -11,7 +11,7 @@ source:
   sha256: 03e161fc69d495daf2b9b5c8d5b43d06e2145520c04727b5bda56d49f1a43ab5
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - accelerate=accelerate.commands.accelerate_cli:main
