@@ -32,7 +32,7 @@ requirements:
     - packaging >=20.0
     - psutil
     - pyyaml
-    - pytorch >=1.10.0
+    - pytorch >=2.0.0
     - huggingface_hub >=0.21.0
     - safetensors >=0.4.3
 
