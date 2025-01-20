@@ -1,5 +1,5 @@
 {% set name = "accelerate" %}
-{% set version = "1.2.1" %}
+{% set version = "1.3.0" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/accelerate-{{ version }}.tar.gz
-  sha256: 03e161fc69d495daf2b9b5c8d5b43d06e2145520c04727b5bda56d49f1a43ab5
+  sha256: 518631c0adb80bd3d42fb29e7e2dc2256bcd7c786b0ba9119bbaa08611b36d9c
 
 build:
-  number: 1
+  number: 0
   noarch: python
   entry_points:
     - accelerate=accelerate.commands.accelerate_cli:main
@@ -32,7 +32,7 @@ requirements:
     - packaging >=20.0
     - psutil
     - pyyaml
-    - pytorch >=1.10.0
+    - pytorch >=2.0.0
     - huggingface_hub >=0.21.0
     - safetensors >=0.4.3
 
