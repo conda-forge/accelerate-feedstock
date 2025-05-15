@@ -1,0 +1,74 @@
+schema_version: 1
+
+context:
+  name: accelerate
+  version: 1.7.0
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/accelerate-${{ version }}.tar.gz
+  sha256: e8a2a5503d6237b9eee73cc8d36cf543f9c2d8dd2c6713450b322f5e6d53a610
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - accelerate=accelerate.commands.accelerate_cli:main
+      - accelerate-config=accelerate.commands.config:main
+      - accelerate-estimate-memory=accelerate.commands.estimate:main
+      - accelerate-launch=accelerate.commands.launch:main
+      - accelerate-merge-weights=accelerate.commands.merge:main
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - numpy >=1.17,<3.0.0
+    - packaging >=20.0
+    - psutil
+    - pyyaml
+    - pytorch >=2.0.0
+    - huggingface_hub >=0.21.0
+    - safetensors >=0.4.3
+
+tests:
+  - python:
+      imports:
+        - accelerate
+      pip_check: true
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - datasets
+        - evaluate
+        - pip
+        - pytest
+        - scipy
+        - scikit-learn
+        - transformers
+        - tqdm
+    script:
+      - accelerate --help
+      - accelerate-config --help
+      - accelerate-launch --help
+      - accelerate-estimate-memory --help
+      - accelerate-merge-weights --help
+
+about:
+  summary: Training loop of PyTorch without boilerplate code
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: https://github.com/huggingface/accelerate
+  documentation: https://huggingface.co/docs/accelerate
+
+extra:
+  recipe-maintainers:
+    - thewchan
