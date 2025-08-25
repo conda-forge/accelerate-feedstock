@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: accelerate
-  version: "1.10.0"
+  version: "1.10.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/accelerate-${{ version }}.tar.gz
-  sha256: 8270568fda9036b5cccdc09703fef47872abccd56eb5f6d53b54ea5fb7581496
+  sha256: 3dea89e433420e4bfac0369cae7e36dcd6a56adfcfd38cdda145c6225eab5df8
 
 build:
   number: 0
