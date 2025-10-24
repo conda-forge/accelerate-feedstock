@@ -31,7 +31,7 @@ requirements:
     - setuptools
   run:
     - python >=${{ python_min }}
-    - numpy >=1.17,<3.0.0
+    - numpy >=1.17
     - packaging >=20.0
     - psutil
     - pyyaml
