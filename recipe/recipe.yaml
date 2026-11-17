@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: accelerate
-  version: "1.15.0"
+  version: "1.16.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/accelerate-${{ version }}.tar.gz
-  sha256: 5654f8c5eaa0d4fa68b33e287a97765da6849bf6d51dcac874e73fbbddfb6134
+  sha256: 43c446b9affb145220946a63fe32e14e968fcfca645d25b5f1f3fdbc375657ae
 
 build:
   number: 0
@@ -35,7 +35,7 @@ requirements:
     - packaging >=20.0
     - psutil
     - pyyaml
-    - pytorch >=2.0.0
+    - pytorch >=2.6.0
     - huggingface_hub >=0.21.0
     - safetensors >=0.4.3
 
